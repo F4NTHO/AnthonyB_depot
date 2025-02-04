@@ -92,17 +92,13 @@ head(starwars)
 
 #Là on dit abscisse espèces et ordonné les masses)
 ggplot(starwars, aes(x = species, y = mass, fill = species)) +
-  #Nos box plots seront noir avec bordure à 0.7
-  geom_boxplot(alpha =0.7, color = "black", outlier.shape =NA)+
-
-  #Là on affiche les points
   geom_jitter(aes(color= species), width = 0.2, size = 3, alpha=0.7)+
   #là on mets un titre au graphique)
   ggtitle("Analyse de la masse des personnages de Star Wars")+
   #un sous titre
-  labs(subtitle= "Comparaison par espèce(sans les extrêmes)",
+  labs(subtitle= "Comparaison par espèce",
   #On créer des espaces 
-  x = "Espèce", y = "Masse (kg)", fill = "Espèce")+
+  x = "Espèce", y = "Masse (kg)")+
   theme_minimal(base_size = 14)+
   theme(axis.text.x = element_text(angle=45, hjust =1, face="bold",color="white"),
   axis.text.y = element_text(face="bold", color= "white"),
