@@ -22,8 +22,9 @@ interface2 <- fluidPage(
     ),
     tabPanel(
       "deuxième onglet",
-      HTML("Un autre code qu'on pourrait rajouter. On va tenter de faire un texte assez long pour voir si ça décale le graphique qu'on a généré en dessous. Bon je pense que ça va être long donc je vais faire une successions de A. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-    )
+      HTML("Un autre code qu'on pourrait rajouter. On va tenter de faire un texte assez long pour voir si ça décale le graphique qu'on a généré en dessous. Bon je pense que ça va être long donc je vais faire une successions de A. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+      h4(span("Là c'est un texte coloré", style = "color: red;"))  
+      )
   ),
 #DECORTICAGE APPLI  
   titlePanel("Deuxième application : les contrôles"),
@@ -52,9 +53,10 @@ interface2 <- fluidPage(
         "Herbivores" = "herbi",
         "Carnivores" = "carni",
         "Omnivores" = "omni",
-        "Insectivores" = "insecti"
+        "Insectivores" = "insecti",
+        "Vegan" = "vegan"
       ),
-      selected = c("carni","herbi","omni","insecti")
+      selected = c("carni","herbi","omni","insecti", "vegan")
     )
   ),
   
