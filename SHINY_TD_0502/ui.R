@@ -45,7 +45,6 @@ interface2 <- fluidPage(
     ),
     
     textInput("titre", "Titre du graphique", value = "Entrez votre titre ici"),
-    
     checkboxGroupInput(
       "groupes",
       "Quel groupes voulez-vous afficher?",
