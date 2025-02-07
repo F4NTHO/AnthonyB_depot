@@ -1,5 +1,6 @@
 ---
-title: "Anthony_Dossier_Individuel_RMD"
+title: "**Dossier Individuel** : Zoom sur le **REGEX**"
+autor: Anthony BARRET
 output:
   pdf_document: default
   html_document: default
@@ -14,6 +15,10 @@ knitr::opts_chunk$set(echo = TRUE, warnings = FALSE)
 library(knitr)
 library(ade4)
 library(FactoMineR)
+
+
+
+#{\displaystyle w_{1}x_{1}+\ldots +w_{m}x_{m}=\sum _{j=1}^{m}w_{j}x_{j}.}
 ```
 
 # ETAT : PAS FINI 
@@ -22,17 +27,37 @@ library(FactoMineR)
 
 Ce dossier a été réalisé dans le cadre du module OPEN (Outil P E N) dispensé à l'ISARA en 2025 et coordonné par M. PAYET. Ce dossier a pour but de présenter un travail de recherche sous-format R.Mark.Down pour nous familiariser à l'outil et justifier de compétences nécessaires abordées au cours de l'optionnel. 
 
-Pour ce faire, nous allons réalisé un support d'information et d'explication sur le concept des *Expressions Régulières* communément appelé *Regex*, qui est utilisé dans plusieurs langages informatiques qui permettre l'identification de structures régulières au sein d'un texte. Puisque le module se fonde essentiellement sur du R, nous aborderons ce concept au travers de ce langage et feront un état des lieux des possibles dans d'autres langages informatique. L'objectif a termes est de fournir un dossier qui permet de permettre l'apprentissage des Regex à toutes personnes en ayant besoin et en fournissant les différents codes adéquats à leur utilisation.  
+Pour ce faire, nous allons réalisé un support d'information et d'explication sur le concept des *Expressions Régulières* communément appelé *Regex*, qui est utilisé dans plusieurs langages informatiques qui permettre l'identification de structures régulières au sein d'un texte. Puisque le module se fonde essentiellement sur du R, nous aborderons ce concept au travers de ce langage et feront un état des lieux des possibles dans d'autres langages informatique. L'objectif a termes est de fournir un dossier qui permet de permettre l'apprentissage des Regex à toutes personnes en ayant besoin et en fournissant les différents codes adéquats à leur utilisation. 
+
+Cet envie d'approfondir mes connaissances sur les expressions régulières provient de mon stage de 4ème année où j'ai été amené à réaliser une base de données à partir de questionnaires. Le réarrangement des données se faisait sur R et je me suis souvent retrouver avec des problèmes de réponses dans les questionnaires. Une des manières de palliers ces problèmes de réponses incohérentes pouvait être le REGEX, puisqu'il permet de trier les informations qu'on souhaite selon un forme spécifique qu'on a pu lui attribuer.
 
 # Le REGEX
 
 ## Le REGEX un concept pour définir l'Homme
 
-Avant de parler d'expressions régulières il faut parler d'anatomie. En effet, au cours des années 1940, Warren McCulloch et Walter Pitts souhaitent décrire le sytème nerveux humain par l'intermédiaire d'automates simples. C'est ainsi qu'en 1943, il arrivent à décrire le neurone formel ou neurone de McCulloch-Pitts, une représentation mathématique et informatique d'un neurone biologique. Ce neurone dispose de plusieurs entré'es et une sorties  
+Avant de parler d'expressions régulières il faut parler d'anatomie. En effet, au cours des années 1940, Warren McCulloch et Walter Pitts souhaitent décrire le sytème nerveux humain par l'intermédiaire d'automates simples. C'est ainsi qu'en 1943, ils arrivent à décrire le neurone formel ou neurone de McCulloch-Pitts, une représentation mathématique et informatique d'un neurone biologique. Ce neurone dispose de plusieurs entrées (dendrites) et une sortie (cône d'émergence). Les actions des synapses sont représentées par des coefficients numériques (poids synatpiques) dont la valeur numérique est ajustée par une phase d'apprentissage. 
 
 **INSERER IMAGE REPRESENTATION NEURONE FORMEL**
 
 **INSERER IMAGE DE NEURONES**
+
+Il faudra cependant attendre 1956 pour que Stephen Cole Kleene ait décrit ces modèles sous l'appellation d'ensemble réguliers et d'automates et 1959 pouvoir son premier traitement mathématiques et rigoureux de la part de Ranbin et Scott, qui leur vaudra un prix Turing en 1976.
+
+A l'orig
+
+
+## Utilisation du REGEX
+
+
+A l'origine créer pour décrire des langages formels, les expres
+Les expressions régulières sont utilisées dans de nombreux domaines.
+Les expressions régulières sont utilisés dans de nombreux domaines. On peut notamment les utiliser dans le cadre de la cybersécurité car elles permettent de vérifier si le type de données reçues correspodn au type de données attendues. Dans le domaine du marketing, 
+
+
+
+# SYNTAXE DU REGEX
+
+
 
 
 
@@ -120,8 +145,8 @@ ggplot(starwars, aes(x = species, y = mass, fill = species)) +
 En vitesse et pour montrer la compréhension voici deux petites références biblios selon le thème de des données @noauthor_star_2025.
 D'ailleurs, le point vert qui est tout en haut est lié à un personnage très charismatique "Jabba" dont sa page wiki de fan est disponible ici. @noauthor_jabba_nodate
 
-```{r logo, echo=FALSE, out.width = '50%', fig.align = "center", fig.cap="Fig. 1: Jabba sur un échiquier"}
-knitr::include_graphics("jabba.png")
+```#{r logo, echo=FALSE, out.width = '50%', fig.align = "center", fig.cap="Fig. 1: Jabba sur un échiquier"}
+#knitr::include_graphics("jabba.png")
 ```
 
 ## Bibliographie
