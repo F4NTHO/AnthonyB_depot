@@ -33,20 +33,55 @@ Cet envie d'approfondir mes connaissances sur les expressions régulières provi
 
 # Le REGEX
 
-## Le REGEX un concept pour définir l'Homme
+## ...de l'Homme à la machine
 
-Avant de parler d'expressions régulières il faut parler d'anatomie. En effet, au cours des années 1940, Warren McCulloch et Walter Pitts souhaitent décrire le sytème nerveux humain par l'intermédiaire d'automates simples. C'est ainsi qu'en 1943, ils arrivent à décrire le neurone formel ou neurone de McCulloch-Pitts, une représentation mathématique et informatique d'un neurone biologique. Ce neurone dispose de plusieurs entrées (dendrites) et une sortie (cône d'émergence). Les actions des synapses sont représentées par des coefficients numériques (poids synatpiques) dont la valeur numérique est ajustée par une phase d'apprentissage. 
+Avant de parler des expressions régulières, nous devons parler d’anatomie. En effet, l’origine des expressions régulières se rapporte à la théorie des automates. Au cours des années 1940, Warren McCULLOCH et Walter PITTS souhaitent décrire le système humain par l’intermédiaire d’automates simples. En 1943, ils arrivent à décrire le neurone formel ou neurone McCullock-Pitts, une représentation mathématique et informatique du neurone biologique. A l’instar du biologique, ce neurone dispose d’une ou plusieurs entrées (dendrites) et une sortie (le cône d’émergence). C’est le début de la théorie des automates. L’ensemble est dirigé selon un modèle mathématique, fonctionnant avec des états binaires (0 ou 1), on peut considérer ce modèle comme un automate fini où chaque neurone est une unité logique activée selon des règles précises. 
+Peu de temps après, en 1945 John von Neuman va formaliser l’architecture des ordinateurs modernes. Il va appliquer la théorie des automates de McCulloch et Pitts pour les adapter aux ordinateurs réels. Dans les années 50, il est devenu nécessaire de décrire formellement les instructions à exécuter, ce qui a abouti aux premiers langages de programmation (Fortran, Algol) qui nécessitaient une grammaire bien définie. C’est alors que fut introduit la Théorie des Langages formels.
 
-**INSERER IMAGE REPRESENTATION NEURONE FORMEL**
+Langages formels = grammaires définies + automates pour les reconnaître.
 
-**INSERER IMAGE DE NEURONES**
+## REGEX et type de langage 
 
-Il faudra cependant attendre 1956 pour que Stephen Cole Kleene ait décrit ces modèles sous l'appellation d'ensemble réguliers et d'automates et 1959 pouvoir son premier traitement mathématiques et rigoureux de la part de Ranbin et Scott, qui leur vaudra un prix Turing en 1976.
+Avant de parler de REGEX, il faut comprendre pourquoi on les a inventés et pour ce faire nous allons parler de langages. D’après la Hiérarchie de Chomsky, il existerait quatre types de grammaire, qui aboutissent à une famille de langage.
 
-A l'orig
+-	Type 0 : **langage récursivement énumérable ou général** reconnaissable par une machine de Turing. Ils peuvent exprimer n’importe quel algorithme possible. En soit, l’algorithme peut comprendre toute forme de langage.
+
+-	Type 1 : **langage contextuel** : reconnaissable par les automates linéairement bornés. Ils peuvent inclure des règles plus complexes où certaines parties d’une phrase influences d’autres. 
+
+**Exemple concret d’application :** le correcteur grammatical.
+Un exemple de règle que ces automates peuvent comprendre : pour le mot « ACCESSIBLE » , on sait que le E est sans accent, car la langue française nous interdit de mettre un accent s’il y a présence d’une double consonne (ici le « SS ») juste après. 
+
+-	Type 2 : **langage algébriques ou hors contexte** : langages reconnaissables par les automates à pile. Ils permettent des structures plus complexes, comme les parenthèses imbriquées dans une phrase. 
+
+**Exemple concret :** : une calculette ou une phrase bien formée en français. 
+Ce type de langage est très bien présenter dans la plupart des langages de programmations. Parmi les règles qui permettent de présenter ce type de langage, cela va être tout ce qui est lié à la formation d’une « phrase ». 
+Ici, on ne va pas s’intéresser au mot spécifiquement, mais à leur succession, leur assemblage dans la phrase. 
+**Exemple typique** : « SUJET + VERBE + COMPLEMENT » ou bien toutes les conditions dans une fonction. 
+
+-	Type 3 : **langages rationnels ou réguliers** reconnaissables par les automates finis. 
+
+**Exemple concret :** Une machine à tourniquer qui reconnaît un jeton « A » ou « B » ou un détecteur de mots-clés. 
+Ce type de langage permet de vérifier les caractéristiques lexicales d’un mot. Un exemple concret est la vérification de la forme d’un courrier électronique lors d’une identification. En effet, un courrier électronique est composé comme suit : exempleAROBASE.COM
+
+Globalement, tous les langages sont de types 0 et chaque type de langage est un cas particulier du type de langage supérieur. Par exemple, le langage de type 2 est un cas particulier du langage du type 1 au même titre que le type 3 est un cas particulier du type 2. Ainsi, plus on monte dans la hiérarchie, plus langage est puissant, mais aussi, plus il est complexe à analyser et à traiter. À l’inverse, plus on descend, plus le rajout de règles de restrictions des automates va amener à analyser des langages de plus en plus simples.
+En 1956, Stephen COLE KLEENE, définira les expressions régulières (REGEX) comme appartenant au type 3. C’est le principe du Théorème de Kleene qui affirme qu’un langage est rationnel si et seulement s’il est reconnu par un automate fini. 
+
+Il faudra attendre 1959 pour que Michael Rabin et Dana Scott proposent un traitement mathématique de ces concepts, ce qui leur firent accéder au prix Turing en 1976.
+
+
+## De la théorie à la machine
+
+Jusqu’aux années 1960, les expressions régulières étaient une construction mathématique utilisée en logique et en linguistique formelle. En 1968, Ken Thompson, alors chercheur chez Bell Labs, va les faire entrer dans l’univers de l’informatique. En se basant sur les travaux de KLEEN, Thompson va implémenter l’idée des expressions régulières dans l’éditeur de texte ed, pour que ses utilisateurs puissent effectuer des correspondances de modèles avancées dans des fichiers texte. Par la suite, il les intégrera dans l’éditeur grep pour « Global Regular Expression Print » sous Unix. C’est le début de l’utilisation des expressions régulières en informatique. 
+Les expressions régulières sont largement utilisées dans des utilitaires comme Iex et dans les langages de programmation nés sous Unix comme expr, awk, Perl, Tcl voire Python ou PHP. On les retrouve aussi sur R. 
+
+
 
 
 ## Utilisation du REGEX
+
+A l'origine, les expressions régulières permettaient de décrire les langages formels. Aujourd'hui elles sont utilisées dans l'analyuse et la manipulation des langages informatiques. Les compilateurs et les interprètes sont ainsi basés sur celles-ci. 
+
+
 
 
 A l'origine créer pour décrire des langages formels, les expres
