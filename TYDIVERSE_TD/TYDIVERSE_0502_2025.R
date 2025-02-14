@@ -95,13 +95,6 @@ siteMN_Goth_Var %>%
   mutate(rappportCN = C_MIN/N_MIN) -> siteMN_Goth_var_resul
 
 
-##########################################################################
-####################### Graphique ########################
-##########################################################################
-########### CONSIGNE : un graphique en modifiant l'ordre et en recodant des modalités
-
-ggplot()
-
 
 
 ##########################################################################
@@ -123,6 +116,20 @@ siteMN_Goth_var_resul_pvw <- siteMN_Goth_var_resul_AR %>% pivot_wider(names_from
 #A l'origine la colonne "Modalite" contenait "GORA", "GOBA", "GOEA" et là ça va devenir 3 colonnes et les ID vont devenir les individus correspondants. 
 
 siteMN_Goth_var_resul_pvwnem <- siteMN_Goth_var_resul_nem %>% pivot_wider(names_from = type, values_from = biomass )
+
+##########################################################################
+####################### Graphique ########################
+##########################################################################
+########### CONSIGNE : un graphique en modifiant l'ordre et en recodant des modalités
+
+ggplot(siteMN_Goth_var_resul_nem, aes(x = fct_reorder(type, biomass, .fun = median), y = biomass, fill = type)) +
+  geom_boxplot() +
+  labs(title = "Distribution de la biomasse par type de Nématodes",
+       x = "Type de Nématodes",
+       y = "Biomasse") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Pastel1")
+
 
 
 ##########################################################################
