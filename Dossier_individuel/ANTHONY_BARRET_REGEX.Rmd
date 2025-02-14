@@ -3,9 +3,6 @@ title: "**Dossier Individuel** : Zoom sur le **REGEX**"
 author: Anthony BARRET
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  pdf_document:
-    toc: true
-    toc_depth: '3'
   html_document:
     code_folding: hide
     fig_caption: true
@@ -15,6 +12,9 @@ output:
     toc_float:
       collapsed: true
       smooth_scroll: true
+  pdf_document:
+    toc: true
+    toc_depth: '3'
 bibliography: biblio_regex/REGEX.bib
 csl: "biblio_regex/isara-iso-690.csl"
 ---
